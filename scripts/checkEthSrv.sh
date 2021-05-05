@@ -1,7 +1,7 @@
 #! /bin/bash
 
 logFile="/tmp/ethSrvLog.log"
-server="us2.ethermine.or343g"
+server="us2.ethermine.org"
 wallet="myWallet"
 timestamp=$(date +%Y-%m-%d_%H:%M:%S)
 
