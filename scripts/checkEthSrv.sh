@@ -19,7 +19,7 @@ while [[ $count -ne 0 ]] ; do
         echo "$timestamp: ETH Server is Still Up" >> $logFile
         if [[ $(pidof ethminer) == "" ]] ; then
             echo "$timestamp: ETH Miner terminal is not active, reinitializing mining!"
-            xterm -hold -e sudo ethminer -G -P stratum1+tcp://$wallet@$server:$port
+            sudo xterm -hold -e sudo ethminer -G -P stratum1+tcp://$wallet@$server:$port
         fi                     
     else
         echo "$timestamp: ETH Server is Offline" >> $logFile
@@ -30,7 +30,7 @@ while [[ $count -ne 0 ]] ; do
             echo "$timestamp: Killing inactive ETH miner process."
             sudo kill $(pidof ethminer)
             echo "$timestamp: Reinitializing Miner."
-            xterm -hold -e sudo ethminer -G -P stratum1+tcp://$wallet@$server:$port
+            sudo xterm -hold -e sudo ethminer -G -P stratum1+tcp://$wallet@$server:$port
         fi
     fi
     ((count = count - 1))                  
